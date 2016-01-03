@@ -1,22 +1,21 @@
 <?php
 
 /*
-
 The following must be configured before running the script.
-
 */
+$backuppath = ''; //Physical path to the backup folder. Without trailing slash. REQUIRED.
 
 define('awsAccessKey', ''); // required
 define('awsSecretKey', ''); // required
 define('awsBucket', ''); // required
 
 // Will this script run "weekly", "daily", or "hourly"?
-define('schedule','daily'); // required
+define('schedule','weekly'); // required
 
 require_once('include/backup.inc.php');
 
 // You may place any number of .php files in the backups folder. They will be executed here.
-foreach (glob(dirname(__FILE__) . "/backups/*.php") as $filename)
+foreach ($backuppath . "/*.php") as $filename)
 {
     include $filename;
 }
@@ -42,6 +41,6 @@ backupFiles - array of paths, [prefix]
   prefix = Optional: backup filenames will contain this prefix, this prevents overwriting other backups when you have more than one server backing up at once.
 
 */
-backupFiles(array('/home/myuser', '/etc'),'me');
-backupFiles(array('/var/www'),'web files');
+//backupFiles(array('/home/myuser', '/etc'),'me');
+//backupFiles(array('/var/www'),'web files');
 ?>
