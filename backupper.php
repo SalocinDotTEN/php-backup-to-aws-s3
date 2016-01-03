@@ -1,10 +1,28 @@
 <?php
+require_once('include/Ping.php'); //Put in Ping class to ping the endpoint or anything else.
 
 /*
 The following must be configured before running the script.
 */
 $backuppath = ''; //Physical path to the backup folder. Without trailing slash. REQUIRED.
 
+$pingSg1 = new Ping('s3-ap-southeast-1.amazonaws.com');
+$latencySg1 = $pingSg1->ping();
+$pingSg2 = new Ping('s3-ap-southeast-2.amazonaws.com');
+$latencySg2 = $pingSg2->ping();
+if ($latencySg1 !== false) { //If Singapore 1 is working...
+    define('awsEndpoint', 's3-ap-southeast-1.amazonaws.com'); //Set to Singapore 1
+    unset($pingSg1);
+    unset($pingSg2);
+} elseif {
+    define('awsEndpoint', 's3-ap-southeast-2.amazonaws.com'); //Set to Singapore 2
+    unset($pingSg1);
+    unset($pingSg2);
+} else {
+    unset($pingSg1);
+    unset($pingSg2);
+    die("No endpoints are working!!!");
+}
 define('awsAccessKey', ''); // required
 define('awsSecretKey', ''); // required
 define('awsBucket', ''); // required
