@@ -21,15 +21,15 @@ I used this program in production for several years without problems. But, your 
 4. Upload to your server.
 5. Setup a cronjob to run the backups for you!
 
-For example, create a file called /etc/cron.daily/backup and add this code to it:
+For example, create a file called /etc/cron.daily/backupper.sh and add this code to it:
   
     #!/bin/bash
-    /usr/bin/php /path/to/script/backup.php    
+    /usr/bin/php /path/to/script/backupper.php
     exit 0
 
 NOTE: Make sure to set the /etc/cron.daily/backup file to be executable. Like this:
 
-    chmod +x /etc/cron.daily/backup
+    chmod +x /etc/cron.daily/backupper.sh
 
 ## About this script
 
@@ -125,9 +125,9 @@ There is a [Chef](http://www.opscode.com/chef/) cookbook that will assist in set
 
 [https://github.com/ianneub/php_backup_s3-cookbook](https://github.com/ianneub/php_backup_s3-cookbook)
 
-## About the author
+## About the original author...
 
-My name is [Ian](http://www.ianneubert.com/). I wrote this small program to help backup my virtual machines hosted at various places. I figured someone might be able to make use of it, so I've published it as open source. I also wanted a way to store my version history, learn to use git, and do it for free. Thanks [github](http://github.com)!
+"My name is [Ian](http://www.ianneubert.com/). I wrote this small program to help backup my virtual machines hosted at various places. I figured someone might be able to make use of it, so I've published it as open source. I also wanted a way to store my version history, learn to use git, and do it for free. Thanks [github](http://github.com)!"
 
 ## License
 
