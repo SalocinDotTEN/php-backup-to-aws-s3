@@ -1,8 +1,10 @@
-# phpBackupS3, modified by Salocin.TEN for semi commercial use.
+# phpBackupS3
+
+(Modified by Salocin.TEN for semi commercial use)
 
 This program will backup file paths and [MySQL](http://www.mysql.com) databases to [Amazon's S3](http://www.amazonaws.com/) storage cloud service.
 
-I used this program in production for several years without problems. But, your results may vary.
+It was apparently used on production systems for several years without problems. But, your results may vary.
 
 ## Features
 
@@ -14,8 +16,7 @@ I used this program in production for several years without problems. But, your 
 
 ## Installation
 
-1. Copy the backup.dist.php file to a new file name, like backup.php
-2. Add your Amazon AWS access key, password, and bucket in the backup.php file provided.
+1. Add your Amazon AWS access key, password, and bucket in the backupper.php file provided.
 3. Customize the files and database servers that are backed up.
   * You may optionally create any number of .php files inside the "backups" directory. Each one will be executed.
 4. Upload to your server.
