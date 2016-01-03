@@ -21,7 +21,7 @@ IN THE SOFTWARE.
 set_time_limit(0);
 
 if (!defined('date.timezone')) {
-	ini_set('date.timezone', 'America/Los_Angeles');
+	ini_set('date.timezone', 'Asia/Kuala_Lumpur');
 }
 
 if (!defined('debug')) {
